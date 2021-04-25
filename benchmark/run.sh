@@ -14,10 +14,10 @@ echo ""
 for benchmark_file in $(ls *.py)
 do
   echo "*****************************"
-  echo "Testing 5 times with $benchmark_file..."
+  echo "Testing 10 times with $benchmark_file..."
   echo ""
 
-  for i in {0..4}
+  for i in {0..9}
   do
     python3 $benchmark_file
     echo ""
