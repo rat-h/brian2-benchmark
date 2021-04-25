@@ -92,4 +92,4 @@ print("Time step         : %.2f ms"%(defaultclock.dt*1000.))
 
 # plot(s_mon.t/ms, s_mon.i, '.k',ms=9)
 # plt.xlim(0.,500.)
-show()
+# show()
