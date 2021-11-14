@@ -48,6 +48,13 @@ Brian-2 benchmarks are taken from the [ModelDB record #222725](https://senselab.
   - Native, Docker 20.10.6, no limits
   - Ubuntu 21.04
   - Infinity Fabric overclocked to 1800
+5. FrameWork Laptop
+  - 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+    - 4 codes, 8 threads
+    - Min 0.4 GHz, Burst 4.7 GHz
+  - RAM 64Gb DDR4-3200
+  - SDD 500 Gb WD_BLACK™ SN750 NVMe™ 
+  - Pop!\_OS 21.04   
 
 ## Tests
 1. 5000 Leaky Integrate-and-File neurons in sparsely connected network.
