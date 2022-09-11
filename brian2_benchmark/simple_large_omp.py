@@ -4,6 +4,7 @@ Multithread tests in OpenMP standalone mode test for simple large model.
 
 import time
 import os
+import sys
 import numpy as np
 
 from brian2 import (
@@ -17,9 +18,10 @@ from brian2 import (
     SpikeGeneratorGroup,
     SpikeMonitor,
     Synapses,
+    device,
 )
 
-set_device("cpp_standalone", directory="SimpleLarge")
+set_device("cpp_standalone", directory=sys.argv[0][:-3])
 prefs.devices.cpp_standalone.openmp_threads = os.cpu_count()
 
 startbuild = time.time()
@@ -88,3 +90,5 @@ endsimulate = time.time()
 print(f"Building time     : {(endbuild - startbuild):0.2f} s")
 print(f"Simulation time   : {(endsimulate - endbuild):0.2f} s")
 print(f"Time step         : {(defaultclock.dt * 1000.0):0.2f} ms")
+
+device.delete(force=True)
