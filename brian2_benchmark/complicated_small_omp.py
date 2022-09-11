@@ -3,7 +3,8 @@ Multithread tests in OpenMP standalone mode test for complicated small model.
 """
 
 import time
-import os, sys
+import os
+import sys
 import numpy as np
 from brian2 import (
     ufarad,
