@@ -24,9 +24,10 @@ from brian2 import (
     NeuronGroup,
     SpikeMonitor,
     Synapses,
+    device,
 )
 
-set_device("cpp_standalone", directory="ComplicatedSmall")
+set_device("cpp_standalone", directory=sys.argv[0][:-3])
 prefs.devices.cpp_standalone.openmp_threads = os.cpu_count()
 
 startbuild = time.time()
@@ -82,7 +83,13 @@ beta_n = .5*exp((10*mV-v+VT)/(40*mV))/ms : Hz
 """
 )
 defaultclock.dt = 0.05 * ms
-P = NeuronGroup(400, model=eqs, threshold="v>25*mV", method="rk4")
+P = NeuronGroup(
+    400,
+    model=eqs,
+    threshold="v>25*mV",
+    refractory='v>-25*mV',
+    method="rk4"
+)
 
 Ci = Synapses(
     P,
@@ -119,3 +126,5 @@ endsimulate = time.time()
 print(f"Building time     : {(endbuild - startbuild):0.2f} s")
 print(f"Simulation time   : {(endsimulate - endbuild):0.2f} s")
 print(f"Time step         : {(defaultclock.dt * 1000.0):0.2f} ms")
+
+device.delete(force=True)

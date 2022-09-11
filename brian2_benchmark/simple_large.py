@@ -14,6 +14,7 @@ from brian2 import (
     SpikeMonitor,
     Synapses,
     codegen,
+    device,
 )
 
 codegen.target = "cython"
@@ -84,3 +85,5 @@ endsimulate = time.time()
 print(f"Building time     : {(endbuild - startbuild):0.2f} s")
 print(f"Simulation time   : {(endsimulate - endbuild):0.2f} s")
 print(f"Time step         : {(defaultclock.dt * 1000.0):0.2f} ms")
+
+device.delete(force=True)
