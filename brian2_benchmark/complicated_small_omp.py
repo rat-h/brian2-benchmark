@@ -85,11 +85,7 @@ beta_n = .5*exp((10*mV-v+VT)/(40*mV))/ms : Hz
 )
 defaultclock.dt = 0.05 * ms
 P = NeuronGroup(
-    400,
-    model=eqs,
-    threshold="v>25*mV",
-    refractory='v>-25*mV',
-    method="rk4"
+    400, model=eqs, threshold="v>25*mV", refractory="v>-25*mV", method="rk4"
 )
 
 Ci = Synapses(
