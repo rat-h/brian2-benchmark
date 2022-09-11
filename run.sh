@@ -23,6 +23,8 @@ do
 
   for i in {0..9}
   do
+    # removes precompiled results and caches
+    rm -fR ${benchmark_file%%.py} ~/.cython
     python3 $benchmark_file
     echo ""
   done
