@@ -23,27 +23,22 @@ Brian-2 benchmarks are taken from the [ModelDB record #222725](https://senselab.
 
 ## Hardware platforms
 
-1. MacBook Pro 13" M1 (2020, 16GB RAM)
-  - M1
-    - 8 cores (4 performance, 4 efficient)
-    - CPU TDP 15W (?)
-  - VM, Docker for Mac 4.12.0, configured to 8 Cores, 8GB RAM, `virtualization.framework`
-  - macOS Monterey 12.5.1
-2. MacBook Pro 14" M1 Max 10CPU 32GPU (2021, 64GB RAM)
+1. MacBook Pro 14" M1 Max 10CPU 32GPU (2021, 64GB RAM)
   - M1 Max
     - 10 cores (8 performance, 2 efficient)
-    - CPU TDP ~30W (?)
+    - CPU TDP ~30W
   - VM, Docker for Mac 4.12.0, configured to 10 Cores, 16GB RAM, `virtualization.framework`
   - macOS Monterey 12.5.1
-3. MacBook Air M2 8CPU 10GPU (2022, 24GB RAM)
+2. MacBook Air M2 8CPU 10GPU (2022, 24GB RAM)
   - M2
     - 8 cores (4 performance, 4 efficient)
-    - CPU TDP 15W (?), passive cooling
+    - CPU TDP ~15W, passive cooling
   - VM, Docker for Mac 4.12.0, configured to 8 Cores, 8GB RAM, `virtualization.framework`
   - macOS Monterey 12.5.1
-4. FrameWork 2021
+3.  FrameWork i7-1165G7 (2021, 64GB RAM)
   - 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
     - 4 cores / 8 threads
+    - CPU TDP Turbo 60W
   - Docker version 20.10.14, build a224086
   - Pop!_OS 22.04 LTS
 
